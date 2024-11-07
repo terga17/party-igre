@@ -24,7 +24,7 @@ Make sure you have the following installed:
 
 2. Run the following commands in terminal:
 ```
-cd rpo_backend
+cd Backend
 copy .env.example .env
 composer install
 php artisan key:generate

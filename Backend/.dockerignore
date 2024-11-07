@@ -1,0 +1,5 @@
+node_modules
+Dockerfile
+.dockerignore
+src/node_modules
+mysql-data
