@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: rpo_database_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root   # Root password for MySQL
+      MYSQL_DATABASE: rpo_database                # Initial database name
+    ports:
+      - "3306:3306"                       # Expose MySQL on port 3306
+    volumes:
+      - ./mysql-data:/var/lib/mysql       # Persist MySQL data
+
+  adminer:
+    image: adminer
+    container_name: rpo_adminer_container
+    ports:
+      - "8080:8080"                       # Expose Adminer on port 8080
+    depends_on:
+      - mysql                             # Ensure MySQL starts before Adminer
+
+  laravel:
+    image: rpo_api_container
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    container_name: rpo_api_container
+    ports:
+      - "8181:8181"
+    depends_on:
+      - mysql 
+    volumes:
+      - .:/app

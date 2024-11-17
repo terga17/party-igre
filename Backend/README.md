@@ -1,12 +1,3 @@
-# party-igre
-Skupinska naloga za predmet RPO
-
-# Sodelujoči
-Luka Lamprečnik
-Nik Terglav
-Rene Zadravec
-Matevž Ozvatič
-
 
 # Project Setup
 
@@ -32,7 +23,3 @@ docker-compose -p rpo_backend up -d --build
 docker exec rpo_api_container php artisan migrate
 ```
 4. ... profit
-
-
-# Frontend 
-ng serve -o
