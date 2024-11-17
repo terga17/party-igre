@@ -36,3 +36,4 @@ docker exec rpo_api_container php artisan migrate
 
 # Frontend 
 ng serve -o
+test
