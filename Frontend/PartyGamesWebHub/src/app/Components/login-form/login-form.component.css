@@ -1,0 +1,86 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 25vw;
+  border: 0.5rem solid black;
+  border-radius: 1rem;
+  background-color: rgb(226, 226, 226, 0.8);
+}
+
+.img-container {
+  border: 0.5rem solid white;
+  height: 400px;
+  width: 430px;
+  border-radius: 1rem;
+  background-size: cover;
+  background-image: url(../../../assets/images/party-logo-full.jpg);
+}
+
+.img-container img {
+  height: 400px;
+  width: 430px;
+  border-radius: 1rem;
+}
+
+.btn-container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+button {
+  border: 2px solid white;
+  width: 5rem;
+  height: 3.3rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  background-color: rgb(84, 201, 84);
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(46, 172, 46);
+  border: 2px solid black;
+  color: black;
+}
+
+.btn-guest {
+  background-color: rgb(104, 104, 235);
+  color: white;
+}
+
+.btn-guest:hover {
+  background-color: rgb(61, 61, 223);
+  border: 2px solid black;
+  color: black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.form-group {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: rgb(228, 228, 228);
+  border: 2px solid black;
+  border-radius: 0.2rem;
+  width: 18rem;
+  height: 1.5rem;
+}

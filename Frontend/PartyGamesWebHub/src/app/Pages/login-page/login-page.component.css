@@ -1,4 +1,10 @@
 .container {
   display: flex;
   justify-content: center;
+  background-image: url(../../../assets/images/bg-party.png);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,7 +1,7 @@
 <div class="login-container">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-    <h2>Login</h2>
+  <div class="img-container"></div>
 
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
     <div class="form-group">
       <label for="email">Email:</label>
       <input
@@ -47,12 +47,24 @@
       </div>
     </div>
 
-    <button
-      type="submit"
-      class="btn btn-primary"
-      [disabled]="loginForm.invalid"
-    >
-      Login
-    </button>
+    <div class="btn-container">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        Sign up
+      </button>
+      <button class="btn btn-primary btn-guest" (click)="navigateToHub()">
+        Continue as guest
+      </button>
+    </div>
   </form>
 </div>
