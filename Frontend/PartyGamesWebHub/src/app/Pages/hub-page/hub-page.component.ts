@@ -26,10 +26,10 @@ export class HubPageComponent {
   OpenHelp() {
     console.log('open');
     this.dialog.open(HelpModalComponent, {
-      width: '500px',
+      width: '850px',
     });
   }
-  navigateToBuser() {
-    this.router.navigate(['/hub']);
+  NavigateToBus() {
+    this.router.navigate(['/buser']);
   }
 }
