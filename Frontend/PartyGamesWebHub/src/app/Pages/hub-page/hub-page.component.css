@@ -1,4 +1,41 @@
-* {
-  color: white;
-  font-size: 5rem;
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(182, 79, 118);
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 2px solid black;
+}
+
+.nav-right {
+  padding-right: 3rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.game-section {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.game-container {
+  width: 60rem;
+  height: 18rem;
+  border: 1px solid green;
+}
+
+/* * {
+  border: 1px solid black;
+} */
