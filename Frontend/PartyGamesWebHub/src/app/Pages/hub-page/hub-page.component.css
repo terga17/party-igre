@@ -19,7 +19,12 @@
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2.5rem;
+}
+
+fa-icon:hover {
+  color: white;
+  cursor: pointer;
 }
 
 .game-section {
@@ -31,9 +36,64 @@
 }
 
 .game-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   width: 60rem;
   height: 18rem;
-  border: 1px solid green;
+  border: 3px solid black;
+}
+
+.img-container {
+  width: 175px;
+  height: 222px;
+}
+
+.img-container img {
+  border: 2px solid white;
+}
+
+.desc-n-play {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.how-btn {
+  align-self: flex-end;
+  padding-bottom: 2.5rem;
+}
+
+.desc-n-play button {
+  color: white;
+  text-transform: uppercase;
+  width: 7rem;
+  height: 2rem;
+  background-color: rgb(34, 165, 34);
+}
+
+.desc-n-play button:hover {
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.how-btn button:hover {
+  cursor: pointer;
+  border: 3px solid black;
+}
+
+.how-btn button {
+  color: black;
+  text-transform: uppercase;
+  width: 6rem;
+  height: 2rem;
+  background-color: rgb(219, 219, 219);
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
 }
 
 /* * {
