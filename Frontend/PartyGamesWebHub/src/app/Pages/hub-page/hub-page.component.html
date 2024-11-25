@@ -10,14 +10,22 @@
     </div>
     <div class="nav-right">
       <ul>
-        <li>settings</li>
-        <li>profile</li>
+        <fa-icon [icon]="['fas', 'cog']" size="2x"></fa-icon>
+        <fa-icon [icon]="['fas', 'user-circle']" size="2x"></fa-icon>
       </ul>
     </div>
   </div>
 
   <div class="game-section">
     <div class="game-container">
+      <div class="img-container">
+        <img
+          src="/assets/Images/dtb.jpg"
+          alt="bus"
+          height="20px"
+          width="20px"
+        />
+      </div>
       <div class="desc-n-play">
         <h1>Kdo vozi avtobus</h1>
         <p>Kratek opis</p>
@@ -31,7 +39,25 @@
       </div>
     </div>
     <div class="game-container">
-      <h1>never have i ever</h1>
+      <div class="img-container">
+        <img
+          src="/assets/Images/neverhave.png"
+          alt="everhave"
+          height="20px"
+          width="20px"
+        />
+      </div>
+      <div class="desc-n-play">
+        <h1>Never have i ever</h1>
+        <p>Kratek opis</p>
+        <button>Igraj</button>
+      </div>
+      <div class="how-btn">
+        <button>Navodila</button>
+      </div>
+      <div class="stats">
+        <h3>Igre odigrane: 12</h3>
+      </div>
     </div>
   </div>
 </div>
