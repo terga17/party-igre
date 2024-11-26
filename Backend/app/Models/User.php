@@ -19,8 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'username',
-        'email',
         'password',
+        'about_me',
+        'profile_picture'
     ];
 
     /**
@@ -45,4 +46,37 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // A user can have many friends (through the pivot table)
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id')
+            ->withTimestamps();  // Optionally include timestamps
+    }
+
+    // A user can check for mutual friends or add a friend through the pivot table
+    public function addFriend(User $friend)
+    {
+        // Check if the friendship already exists in either direction
+        if (!$this->isFriend($friend)) {
+            // Add both directions to make the friendship bidirectional
+            $this->friends()->attach($friend->id);
+            $friend->friends()->attach($this->id);
+        }
+    }
+
+    // A user can remove a friend from the list
+    public function removeFriend(User $friend)
+    {
+        // Remove both directions to remove the bidirectional friendship
+        $this->friends()->detach($friend->id);
+        $friend->friends()->detach($this->id);  // Remove a friend
+    }
+
+    // Check if two users are friends
+    public function isFriend(User $friend)
+    {
+        return $this->friends()->where('friend_id', $friend->id)->exists();
+    }
+
 }
