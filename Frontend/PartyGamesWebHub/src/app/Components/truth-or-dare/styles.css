@@ -1,0 +1,248 @@
+.truth-or-dare-choose-type,
+.truth-or-dare-choose-type * {
+  box-sizing: border-box;
+}
+.truth-or-dare-choose-type {
+  height: 662px;
+  position: relative;
+}
+.truth-or-dare-backround-3 {
+  width: 1072px;
+  height: 662px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+}
+.rectangle-16 {
+  background: rgba(0, 0, 0, 0.4);
+  width: 1072px;
+  height: 662px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.frame {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 697px;
+  height: 382px;
+  position: absolute;
+  left: 188px;
+  top: 140px;
+}
+.truth-or-dare {
+  color: #ffffff;
+  text-align: center;
+  font-family: "HoltwoodOneSc-Regular", sans-serif;
+  font-size: 43px;
+  font-weight: 400;
+  position: absolute;
+  left: 319px;
+  top: 40px;
+  width: 447px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.choose-type-of-game {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 319px;
+  top: 170px;
+  width: 434px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.normal {
+  width: 258px;
+  height: 90px;
+  position: static;
+}
+.rectangle-17 {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  position: absolute;
+  left: 256px;
+  top: 241px;
+}
+.normal2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 327px;
+  top: 266px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 288px;
+  top: 269px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.couples {
+  width: 258px;
+  height: 90px;
+  position: static;
+}
+.rectangle-172 {
+  background: #ffb2b2;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  position: absolute;
+  left: 567px;
+  top: 241px;
+}
+.div2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 597px;
+  top: 269px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.couples2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 635px;
+  top: 266px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.party {
+  width: 258px;
+  height: 90px;
+  position: static;
+}
+.rectangle-173 {
+  background: #c9fec4;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  position: absolute;
+  left: 256px;
+  top: 364px;
+}
+.div3 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 296px;
+  top: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.party2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 337px;
+  top: 387px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.extreme {
+  width: 258px;
+  height: 90px;
+  position: static;
+}
+.rectangle-174 {
+  background: #d5cdd6;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  position: absolute;
+  left: 567px;
+  top: 364px;
+}
+.div4 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 594px;
+  top: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.extreme2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 631px;
+  top: 387px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.information-2 {
+  width: 35px;
+  height: 36px;
+  position: absolute;
+  left: 825px;
+  top: 160px;
+  object-fit: cover;
+}
