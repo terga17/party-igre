@@ -1,18 +1,16 @@
 body {
     font-family: Arial, sans-serif;
+    background-image: url('/assets/Images/buser_background.jpg'); /* Tukaj zamenjaj pot do tvoje slike */
+    background-size: cover;
+    background-position: center;
     color: white;
     margin: 0;
     padding: 0;
   }
   
   .drive-the-bus-container {
-    background-image: url('/assets/Images/buser_background.jpg');
-    background-size: cover;
-    background-position: center;
     text-align: center;
     padding: 50px;
-    height: 100vh;
-    width: 100vw;
   }
   
   h1 {
@@ -22,9 +20,7 @@ body {
   }
   
   .lobby-section {
-    background-color: transparent;
-    background:rgba(185, 185, 185, 0.5);
-    border-style: solid;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     padding: 20px;
     display: inline-block;
@@ -74,7 +70,7 @@ body {
   
   .btn-start, .btn-join-lobby {
     background-color: #28a745;
-    color: rgb(0, 0, 0);
+    color: white;
   }
   
   .btn-start:hover, .btn-join-lobby:hover {
@@ -92,26 +88,16 @@ body {
   }
   
   .icon {
-    color: rgb(0, 0, 0);
     font-size: 24px;
     margin: 0 10px;
   }
   
   .btn-invite {
     background-color: #007bff;
-    color: rgb(0, 0, 0);
+    color: white;
     padding: 5px 15px;
   }
   
   .btn-invite:hover {
     background-color: #0056b3;
-
-  }
-
-  .Your-code {
-    color: white;
-  }
-
-  .Enter-code {
-    color: white;
   }
