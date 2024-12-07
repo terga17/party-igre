@@ -22,8 +22,7 @@ body {
   }
   
   .lobby-section {
-    background-color: transparent;
-    background:rgba(185, 185, 185, 0.5);
+    background-color: hsla(0, 0%, 100%, 0.2);
     border-style: solid;
     border-radius: 10px;
     padding: 20px;
@@ -46,12 +45,18 @@ body {
   }
   
   .btn-create, .btn-join {
-    background-color: #6c757d;
+    background-color: hsla(120, 11%, 77%, 0.3);
+    border-style: solid;
     color: rgb(0, 0, 0);
   }
-  
-  .btn-create:hover, .btn-join:hover {
-    background-color: #5a6268;
+  .btn-create {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .btn-join {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
   
   .lobby-inputs {
