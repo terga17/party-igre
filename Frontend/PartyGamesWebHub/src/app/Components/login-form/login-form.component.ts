@@ -68,6 +68,7 @@ export class LoginFormComponent {
         (response: any) => {
           console.log('Login successful:', response);
           alert(`Welcome, ${response.user.username}!`);
+          this.navigateToHub();
         },
         (error) => {
           console.error('Login failed:', error);
@@ -113,7 +114,7 @@ export class LoginFormComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Form Submitted', this.loginForm.value);
+      console.log('Form Submitted');
     } else {
       console.log('Form is invalid');
     }
