@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(206, 206, 206);
+}
+
+h2 {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.all-settings {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-container {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  width: 5rem;
+  height: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
