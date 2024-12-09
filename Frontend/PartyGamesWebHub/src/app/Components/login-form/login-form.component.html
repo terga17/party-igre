@@ -52,6 +52,7 @@
         type="submit"
         class="btn btn-primary"
         [disabled]="loginForm.invalid"
+        (click)="loginUser()"
       >
         Login
       </button>
@@ -59,6 +60,7 @@
         type="submit"
         class="btn btn-primary"
         [disabled]="loginForm.invalid"
+        (click)="registerUser()"
       >
         Sign up
       </button>

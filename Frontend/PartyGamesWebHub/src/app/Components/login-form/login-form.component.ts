@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ApiService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-login-form',
@@ -17,12 +18,18 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent {
   loginForm: FormGroup;
+  users: any[] = [];
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private apiService: ApiService
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
+    this.fetchUsers();
   }
 
   navigateToHub() {
@@ -35,6 +42,73 @@ export class LoginFormComponent {
 
   get password() {
     return this.loginForm.get('password');
+  }
+
+  fetchUsers() {
+    this.apiService.getUsers().subscribe(
+      (response) => {
+        this.users = response;
+        console.log('Fetched users:', this.users); // Move console.log here
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+      }
+    );
+  }
+
+  loginUser() {
+    const formData = this.loginForm.value;
+
+    this.apiService
+      .loginUser({
+        username: formData.email,
+        password: formData.password,
+      })
+      .subscribe(
+        (response: any) => {
+          console.log('Login successful:', response);
+          alert(`Welcome, ${response.user.username}!`);
+        },
+        (error) => {
+          console.error('Login failed:', error);
+          if (error.status === 401) {
+            alert('Invalid username or password.');
+          } else {
+            alert('An error occurred during login. Please try again.');
+          }
+        }
+      );
+  }
+
+  registerUser() {
+    const formData = this.loginForm.value;
+
+    const requestData = {
+      username: formData.email,
+      password: formData.password,
+    };
+
+    if (
+      Array.isArray(this.users) &&
+      this.users.some((user) => user.email === formData.email)
+    ) {
+      alert('User already exists!');
+      return;
+    }
+
+    this.apiService.registerUser(requestData).subscribe(
+      (response: any) => {
+        console.log('Registration successful:', response);
+        alert('Registration successful! Please log in.');
+      },
+      (error) => {
+        console.error('Registration failed:', error);
+        alert('An error occurred during registration.');
+        if (error.status === 422) {
+          console.error('Backend validation errors:', error.error.errors);
+        }
+      }
+    );
   }
 
   onSubmit() {
