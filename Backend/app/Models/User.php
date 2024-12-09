@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -77,6 +78,11 @@ class User extends Authenticatable
     public function isFriend(User $friend)
     {
         return $this->friends()->where('friend_id', $friend->id)->exists();
+    }
+
+    public function hostedGameSession(): HasOne
+    {
+        return $this->hasOne(GameSession::class, 'host_id');
     }
 
 }
