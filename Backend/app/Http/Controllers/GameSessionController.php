@@ -42,7 +42,6 @@ class GameSessionController extends Controller
             'host_id' => 'required',
         ]);
         
-
         $host = User::find($validated['host_id']); // Find the user by ID
         if ($host == null){
             return response()->json([
