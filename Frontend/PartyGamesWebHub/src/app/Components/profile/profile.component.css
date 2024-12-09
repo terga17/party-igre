@@ -1,0 +1,40 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(206, 206, 206);
+}
+
+h2 {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.statistics {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statistic-item {
+  display: flex;
+  padding-top: 0.4rem;
+  gap: 0.5rem;
+}
+
+.first-item {
+  padding-top: 1rem;
+}
+
+.last-item {
+  padding-bottom: 1rem;
+}
+
+button {
+  width: 5rem;
+  height: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+}

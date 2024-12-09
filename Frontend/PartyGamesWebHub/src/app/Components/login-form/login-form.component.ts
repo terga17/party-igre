@@ -8,6 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ApiService } from '../../Services/api.service';
+import { UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -23,7 +24,8 @@ export class LoginFormComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private userService: UserService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -67,6 +69,7 @@ export class LoginFormComponent {
       .subscribe(
         (response: any) => {
           console.log('Login successful:', response);
+          this.userService.setUserName(response.user.username);
           alert(`Welcome, ${response.user.username}!`);
           this.navigateToHub();
         },

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +24,15 @@ export class ApiService {
 
   registerUser(data: { username: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/registerUser`, data);
+  }
+
+  getUserStatistics(): Observable<any> {
+    const mockStatistics = {
+      gameCount: 4,
+      friendCount: 6,
+      avgRating: 3.8,
+      accountCreated: '2024-08-12',
+    };
+    return of(mockStatistics);
   }
 }
