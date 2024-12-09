@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameSessionController;
+use App\Http\Controllers\FriendRequestController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,6 +31,8 @@ Route::get('/user/{id}/hostedSession',[UserController::class, 'showHostSession']
 Route::get('/user/{id}/friends',[UserController::class, 'showFriends']);
 Route::get('/user/{userId}/add-friend/{friendId}', [UserController::class, 'addUserFriend']);
 Route::get('/user/{userId}/remove-friend/{friendId}', [UserController::class, 'removeUserFriend']);
+Route::get('/friend-requests/{senderId}/{receiverId}', [FriendRequestController::class, 'sendRequest']);
+Route::get('/friend-requests/{receiverId}/{requestId}/accept', [FriendRequestController::class, 'acceptRequest']);
 
 
 // Route::resource('user', UserController::class);

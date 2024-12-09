@@ -91,22 +91,22 @@ class UserController extends Controller
         ], 201);
     }
     
-    public function addUserFriend(string $userId, string $friendId)
-    {
-        try {
-            // Attempt to find the user and friend by their IDs
-            $user = User::findOrFail($userId);
-            $friend = User::findOrFail($friendId);
-        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            // Handle the case where the user or friend is not found
-            return response()->json([
-                'message' => 'User or Friend not found.',
-            ], 404); // Return 404 Not Found
-        }
+    // public function addUserFriend(string $userId, string $friendId)
+    // {
+    //     try {
+    //         // Attempt to find the user and friend by their IDs
+    //         $user = User::findOrFail($userId);
+    //         $friend = User::findOrFail($friendId);
+    //     } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+    //         // Handle the case where the user or friend is not found
+    //         return response()->json([
+    //             'message' => 'User or Friend not found.',
+    //         ], 404); // Return 404 Not Found
+    //     }
 
-        // Add the friend to the user
-        return $user->addFriend($friend);
-    }
+    //     // Add the friend to the user
+    //     return $user->addFriend($friend);
+    // }
 
     public function removeUserFriend(string $userId, string $friendId)
     {

@@ -104,4 +104,14 @@ class User extends Authenticatable
         return $this->hasOne(GameSession::class, 'host_id');
     }
 
+    public function sentFriendRequests()
+    {
+        return $this->hasMany(FriendRequest::class, 'sender_id');
+    }
+    
+    public function receivedFriendRequests()
+    {
+        return $this->hasMany(FriendRequest::class, 'receiver_id');
+    }
+
 }
