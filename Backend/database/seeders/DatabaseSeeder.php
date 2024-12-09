@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\GameSession;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $u1->addFriend($u2);
+
+
+        // sessons:
+        $gameSession = new GameSession(['session_name' => 'Chess Match']);
+        $u1->hostedGameSession()->save($gameSession);
+
+        $gameSession = GameSession::find(1);
+        $host = $gameSession->host; // Retrieves the related User
 
     }
 }
