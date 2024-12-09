@@ -10,8 +10,16 @@
     </div>
     <div class="nav-right">
       <ul>
-        <fa-icon [icon]="['fas', 'cog']" size="2x"></fa-icon>
-        <fa-icon [icon]="['fas', 'user-circle']" size="2x"></fa-icon>
+        <fa-icon
+          [icon]="['fas', 'cog']"
+          size="2x"
+          (click)="navigateToSettings()"
+        ></fa-icon>
+        <fa-icon
+          [icon]="['fas', 'user-circle']"
+          (click)="navigateToProfile()"
+          size="2x"
+        ></fa-icon>
       </ul>
     </div>
   </div>

@@ -32,4 +32,10 @@ export class HubPageComponent {
   NavigateToBus() {
     this.router.navigate(['/buser']);
   }
+  navigateToSettings() {
+    this.router.navigate(['/settings']);
+  }
+  navigateToProfile() {
+    this.router.navigate(['/profile']);
+  }
 }
