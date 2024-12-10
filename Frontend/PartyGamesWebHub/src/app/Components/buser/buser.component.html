@@ -1,6 +1,7 @@
-<div class="drive-the-bus-container">
+<div class="drive-the-bus-container"> 
   <h1>DRIVE THE BUS</h1>
   <div class="lobby-section">
+    <fa-icon class="exit" (click)="NavigateToHubPage()" [icon]="['fas', 'xmark']" size="2x"></fa-icon>
     <div class="first-row">
       <div class="left-side">
         <div class="title1"> 
@@ -8,10 +9,10 @@
         </div>
         <div class="lobby-code1">
           <label class= "Your-code">Your code:</label>
-          <input type="text" value="xxxxxx" readonly />
+          <input class= "your-code-box" type="text" value="xxxxxx" readonly />
         </div>
         <div class="button1">
-          <button class= "btn-start">Start</button>
+          <button class= "btn-start" (click)="NavigateToPyramid()">Start</button>
         </div>
       </div>
       <div class="right-side">
@@ -28,11 +29,11 @@
       </div>
     </div>
     <div class="lobby-footer">
-          <span class="icon">👤</span>
-          <span class="icon">➕</span>
-          <span class="icon">➕</span>
-          <span class="icon">➕</span>
-          <button class="btn-invite">INVITE</button>
+          <fa-icon [icon]="['fas', 'user']" size="2x"></fa-icon>
+          <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <button class="btn-invite"(click)="OpenFriendsList()">INVITE</button>
     </div>
   </div>
 </div>

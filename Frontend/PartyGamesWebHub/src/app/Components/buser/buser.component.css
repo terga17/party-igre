@@ -16,6 +16,7 @@
   }
   
   .lobby-section {
+    position: relative;
     background-color: hsla(0, 0%, 100%, 0.2);
     border-style: solid;
     border-radius: 10px;
@@ -81,6 +82,9 @@
   .btn-start, .btn-join-lobby {
     background-color: #28a745;
     color: rgb(0, 0, 0);
+    border: solid;
+    border-radius: 5px;
+    border-width: 2px;
   }
   
   .btn-start:hover, .btn-join-lobby:hover {
@@ -112,7 +116,7 @@
   }
   
   .btn-invite:hover {
-    background-color: #8c8e91;
+    background-color: #ffffff;
   }
 
   .Your-code, .Enter-code{
@@ -123,4 +127,20 @@
     font-size: 36px;
     color: rgb(255, 255, 255);
     margin-bottom: 30px;
+  }
+
+  fa-icon {
+    margin: 10px;
+    color:black;
+  }
+
+  .exit {
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    cursor: pointer; 
+  }
+
+  .exit:hover, fa-icon:hover {
+    color: #ffffff;
   }

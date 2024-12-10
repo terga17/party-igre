@@ -1,0 +1,63 @@
+.pyramid-body {
+    background-image: url('/assets/Images/buser_background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  h1 {
+    font-family: serif;
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .player-cards {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-150%);
+    display: flex;
+  }
+  
+  .card-container {
+    position: relative;
+  }
+  
+  .player-card {
+    width: 100px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; /* Poravnava piramide pod naslov */
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Razmik med vrsticami */
+  }
+  
+  .card {
+    width: 100px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin: 0 5px; /* Horizontalni razmik med kartami */
+  }
+  
