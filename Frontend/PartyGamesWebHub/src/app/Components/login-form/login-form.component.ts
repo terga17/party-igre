@@ -50,7 +50,7 @@ export class LoginFormComponent {
     this.apiService.getUsers().subscribe(
       (response) => {
         this.users = response;
-        console.log('Fetched users:', this.users); // Move console.log here
+        console.log('Fetched users:', this.users);
       },
       (error) => {
         console.error('Error fetching users:', error);
