@@ -3,3 +3,7 @@ Dockerfile
 .dockerignore
 src/node_modules
 mysql-data
+vendor
+.env
+.git
+tmp

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\GameSession;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +16,27 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'username' => 'Test User',
-            'email' => 'test@example.com',
+        
+        $u1 = User::create([
+            'username' => 'Testni user1',
+            'password' => bcrypt('geslo1234'),
         ]);
+
+
+        $u2 = User::create([
+            'username' => 'Testni prijatelj1',
+            'password' => bcrypt('geslo1234'),
+        ]);
+
+        $u1->addFriend($u2);
+
+
+        // sessons:
+        $gameSession = new GameSession(['session_name' => 'Chess Match']);
+        $u1->hostedGameSession()->save($gameSession);
+
+        $gameSession = GameSession::find(1);
+        $host = $gameSession->host; // Retrieves the related User
+
     }
 }
