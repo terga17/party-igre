@@ -84,9 +84,28 @@ class User extends Authenticatable
     // A user can remove a friend from the list
     public function removeFriend(User $friend)
     {
+        if (!$this->isFriend($friend)) {
+            return response()->json([
+                'message' => 'You are not friends.',
+            ], 400);  // Return 400 Bad Request
+        }
+
+        // Remove the corresponding FriendRequest entry, if it exists
+        FriendRequest::where(function ($query) use ($friend) {
+            // Check for both directions of the friend request
+            $query->where('sender_id', $this->id)
+                ->where('receiver_id', $friend->id);
+        })->orWhere(function ($query) use ($friend) {
+            $query->where('sender_id', $friend->id)
+                ->where('receiver_id', $this->id);
+        })->delete();
+
         // Remove both directions to remove the bidirectional friendship
         $this->friends()->detach($friend->id);
         $friend->friends()->detach($this->id);  // Remove a friend
+
+
+
         return response()->json([
             'message' => 'Friend removed successfully.',
             'user' => $this->load('friends'),  // Optionally load the updated friends list
@@ -108,7 +127,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(FriendRequest::class, 'sender_id');
     }
-    
+
     public function receivedFriendRequests()
     {
         return $this->hasMany(FriendRequest::class, 'receiver_id');
