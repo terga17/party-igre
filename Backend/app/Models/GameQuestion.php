@@ -11,7 +11,7 @@ class GameQuestion extends Model
     protected $fillable = [
         'content',
         'type',
-        'intensity',
+        'level',
         'game_id'
     ];
 }

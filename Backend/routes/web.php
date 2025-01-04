@@ -36,7 +36,7 @@ Route::get('/user/{userId}/remove-friend/{friendId}', [UserController::class, 'r
 Route::get('/friend-requests/{senderId}/{receiverId}', [FriendRequestController::class, 'sendRequest']);
 Route::get('/friend-requests/{receiverId}/{requestId}/accept', [FriendRequestController::class, 'acceptRequest']);
 
-Route::get('/questions', [GamesController::class, 'getRandomQuestion']);
+Route::get('/questions', [GamesController::class, 'getAllQuestions']);
 Route::get('/truth', [GamesController::class, 'getTruth']);
 Route::get('/dare', [GamesController::class, 'getDare']);
 Route::get('/question', [GamesController::class, 'getQuestion']);
