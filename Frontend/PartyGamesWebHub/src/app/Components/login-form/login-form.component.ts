@@ -56,7 +56,7 @@ export class LoginFormComponent {
           const user = JSON.parse(userString);
           if (this.users.some(item => item.id == user.id && item.username == user.username)) {
             this.userService.setUserName(user.username);
-            this.userService.setUserName(user.id);
+            this.userService.setUserId(user.id);
             alert(`Welcome, ${user.username}!`);
             this.navigateToHub();
           }
