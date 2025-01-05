@@ -30,16 +30,6 @@
     display: flex;
   }
   
-  .card-container {
-    position: relative;
-  }
-  
-  .player-card {
-    width: 100px;
-    height: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  }
-  
   .pyramid {
     display: flex;
     flex-direction: column;
@@ -59,5 +49,43 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     margin: 0 5px; /* Horizontalni razmik med kartami */
+  }
+
+  .next-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .next-button:hover {
+    background-color: #218838;
+  }
+  
+  .flip-card-inner {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+ 
+  .card-container, .card-container-shown {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .card-container-shown {
+    position: absolute;
+    transform: rotateY(180deg);
+    bottom: 0px;
   }
   

@@ -4,19 +4,19 @@
     <!-- Igralčeve karte -->
     <div class="player-cards">
       <div class="card-container">
-        <img [src]="getRandomCard()" alt="Player Card" class="card player-card">
+        <img [src]="cardBack"  class="card player-card">
       </div>
       <div class="card-container">
-        <img [src]="getRandomCard()" alt="Player Card" class="card player-card">
+        <img [src]="cardBack"  class="card player-card">
       </div>
       <div class="card-container">
-        <img [src]="getRandomCard()" alt="Player Card" class="card player-card">
+        <img [src]="cardBack"  class="card player-card">
       </div>
       <div class="card-container">
-        <img [src]="getRandomCard()" alt="Player Card" class="card player-card">
+        <img [src]="cardBack"  class="card player-card">
       </div>
       <div class="card-container">
-        <img [src]="getRandomCard()" alt="Player Card" class="card player-card">
+        <img [src]="cardBack"  class="card player-card">
       </div>
     </div>
   
@@ -24,68 +24,174 @@
     <div class="pyramid">
       <!-- Prva vrstica -->
       <div class="row">
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(0)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[0]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
       </div>
   
       <!-- Druga vrstica -->
       <div class="row">
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(1)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[1]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(2)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[2]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
       </div>
   
       <!-- Tretja vrstica -->
       <div class="row">
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(3)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[3]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(4)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[4]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(5)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[5]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
       </div>
   
       <!-- Četrta vrstica -->
       <div class="row">
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(6)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[6]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(7)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[7]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(8)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[8]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(9)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[9]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
       </div>
   
       <!-- Peta vrstica -->
       <div class="row">
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(10)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[10]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(11)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[11]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(12)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[12]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(13)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[13]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
-        <div class="card-container">
-          <img [src]="getRandomCard()" alt="Random Card" class="card">
+        <div class="flip-card" (click)="toggleCard(14)">
+          <div class="flip-card-inner" [class.flipped]="flippedStates[14]">
+            <div class="card-container">
+              <img [src]="cardBack"  class="card">
+            </div>
+            <div class="card-container-shown">
+              <img src="assets/Images/playing-cards/2_of_clubs.svg"  class="card">
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <button class="next-button">Next</button>
   </div>
   
