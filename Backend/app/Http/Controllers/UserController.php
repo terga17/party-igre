@@ -42,7 +42,14 @@ class UserController extends Controller
      */
     public function show(string $username)
     {
-        return User::where('username', $username)->firstOrFail();
+        $user = User::find($username);
+
+        // If user by ID is not found, try to find by username
+        if (!$user) {
+            $user = User::where('username', $username)->firstOrFail();
+        }
+        return $user;
+
     }
 
     /**
@@ -84,14 +91,15 @@ class UserController extends Controller
         ]);
     }
 
-    public function showFriends(string $userId){
+    public function showFriends(string $userId)
+    {
         $user = User::with('friends')->findOrFail($userId); // Eager load friends
-        
+
         return response()->json([
             'user' => $user,
         ], 201);
     }
-    
+
 
     public function removeUserFriend(string $userId, string $friendId)
     {

@@ -49,8 +49,19 @@ export class LoginFormComponent {
   fetchUsers() {
     this.apiService.getUsers().subscribe(
       (response) => {
-        this.users = response;
-        console.log('Fetched users:', this.users);
+        this.users = response.users;
+        console.log('Fetched users:', this.users); // Move console.log here
+        const userString = localStorage.getItem('user'); // checks if user logged in browser
+        if (userString) {
+          const user = JSON.parse(userString);
+          if (this.users.some(item => item.id == user.id && item.username == user.username)) {
+            this.userService.setUserName(user.username);
+            this.userService.setUserName(user.id);
+            alert(`Welcome, ${user.username}!`);
+            this.navigateToHub();
+          }
+        }
+
       },
       (error) => {
         console.error('Error fetching users:', error);
@@ -69,7 +80,9 @@ export class LoginFormComponent {
       .subscribe(
         (response: any) => {
           console.log('Login successful:', response);
+          localStorage.setItem("user",JSON.stringify(response.user)); // adds current user to localstorage
           this.userService.setUserName(response.user.username);
+          this.userService.setUserId(response.user.id);
           alert(`Welcome, ${response.user.username}!`);
           this.navigateToHub();
         },

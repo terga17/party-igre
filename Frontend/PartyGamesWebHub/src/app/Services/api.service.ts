@@ -14,8 +14,12 @@ export class ApiService {
     return this.http.get(`${this.apiUrl}/${endpoint}`);
   }
 
-  getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/user`);
+  getUser(userId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}`);
+  }
+
+  getUsers(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user`);
   }
 
   loginUser(data: { username: string; password: string }): Observable<any> {
@@ -26,6 +30,30 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/registerUser`, data);
   }
 
+  fetchFriends(userId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}/friends`);
+  }
+
+  fetchPendingRequests(userId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}/pending-friend-requests`);
+  }
+
+  sendFriendRequest(userId: string, friendId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}/send-friend-request/${friendId}`);
+  }
+
+  acceptFriendRequest(userId: string, requestId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}/accept-friend-request/${requestId}`);
+  }
+
+  rejectFriendRequest(userId: string, requestId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}/reject-friend-request/${requestId}`);
+  }
+
+  removeFriend(userId: string, friendId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}/remove-friend/${friendId}`);
+  }
+  
   getUserStatistics(): Observable<any> {
     const mockStatistics = {
       gameCount: 4,
