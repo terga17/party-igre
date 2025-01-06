@@ -20,9 +20,12 @@ export class UserService {
   getUserName(): string {
     if (!this.userName) {
       const userString = localStorage.getItem('user'); // checks if user logged in browser
-      if (userString) {
+      if (userString && userString != "guest") {
         const user = JSON.parse(userString);
         this.setUserName(user.username);        
+      }
+      else if (userString=="guest"){
+        this.setUserName("guest");
       }
     }
     return this.userName;

@@ -34,6 +34,12 @@ export class LoginFormComponent {
     this.fetchUsers();
   }
 
+  continueAsGuest() {
+    localStorage.removeItem('user');
+    localStorage.setItem('user','guest');
+    this.navigateToHub();
+  }
+
   navigateToHub() {
     this.router.navigate(['/hub']);
   }
@@ -52,7 +58,7 @@ export class LoginFormComponent {
         this.users = response.users;
         console.log('Fetched users:', this.users); // Move console.log here
         const userString = localStorage.getItem('user'); // checks if user logged in browser
-        if (userString) {
+        if (userString && userString != "guest") {
           const user = JSON.parse(userString);
           if (this.users.some(item => item.id == user.id && item.username == user.username)) {
             this.userService.setUserName(user.username);
@@ -65,6 +71,7 @@ export class LoginFormComponent {
       },
       (error) => {
         console.error('Error fetching users:', error);
+        localStorage.removeItem('user');
       }
     );
   }

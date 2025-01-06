@@ -20,9 +20,15 @@ export class ProfileComponent {
     private router: Router
   ) {
     this.userName = this.userService.getUserName();
-    this.fetchUserStatistics();
-    this.displayFriends();
+    if (!this.userName) { // if nobody logged in 
+      this.router.navigate(['/']);
+    }
+    if (this.userName != 'guest') { // user logged in
+      this.fetchUserStatistics();
+      this.displayFriends();
+    }
     console.log("User:",this.userService.getUserName());
+    this.loading = false;
   }
 
   statistics: any = {};
@@ -48,6 +54,13 @@ export class ProfileComponent {
 
   returnToHub() {
     this.router.navigate(['/hub']);
+  }
+
+  logout() {
+    localStorage.removeItem("user");
+    this.userService.setUserName('');
+    this.userService.setUserId('');
+    this.router.navigate(["/"]);
   }
 
   displayFriends() {
