@@ -32,11 +32,11 @@ class DatabaseSeeder extends Seeder
 
 
         // sessons:
-        $gameSession = new GameSession(['session_name' => 'Chess Match']);
-        $u1->hostedGameSession()->save($gameSession);
+        // $gameSession = new GameSession(['session_name' => 'Chess Match']);
+        // $u1->hostedGameSession()->save($gameSession);
 
-        $gameSession = GameSession::find(1);
-        $host = $gameSession->host; // Retrieves the related User
+        // $gameSession = GameSession::find(1);
+        // $host = $gameSession->host; // Retrieves the related User
 
     }
 }

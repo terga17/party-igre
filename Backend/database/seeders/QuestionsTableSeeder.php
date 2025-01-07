@@ -299,6 +299,156 @@ class QuestionsTableSeeder extends Seeder
                 "content": "Do an impression of your favorite celebrity",
                 "type": "Dare",
                 "game_id": 3
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever snooped through someone else’s phone.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever skipped school.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "1",
+                "content": "Never have I ever pretended to know a stranger.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever had a one-night stand.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever cheated on a test.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "1",
+                "content": "Never have I ever fallen asleep in public.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever cried during a movie.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever gone skinny dipping.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever dated more than one person at once.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever lied about my age.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "1",
+                "content": "Never have I ever forgotten someone’s name immediately after meeting them.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever broken a bone.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever sent a text to the wrong person.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever dyed my hair a crazy color.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever gone on a blind date.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever been on a road trip.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever stayed up all night binge-watching a series.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever ghosted someone.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever had a crush on a teacher.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever eaten an entire pizza by myself.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "1",
+                "content": "Never have I ever laughed so hard I cried.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "2",
+                "content": "Never have I ever lied to get out of a social event.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever snuck out of the house.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever kissed someone of the same sex.",
+                "type": "Question",
+                "game_id": 1
+            },
+            {
+                "level": "3",
+                "content": "Never have I ever drunk dialed someone.",
+                "type": "Question",
+                "game_id": 1
             }]';
 
         $questions = json_decode($json, true);
