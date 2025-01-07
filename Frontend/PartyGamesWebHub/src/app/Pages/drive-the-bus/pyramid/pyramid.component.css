@@ -53,20 +53,25 @@
 
   .next-button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40%;
+    left: 75%;
+    transform: translate(-50%, 50%);
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 30px 40px;
+    font-size: 25px;
+    border-radius: 9px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
   
   .next-button:hover {
     background-color: #218838;
+    border-color: white;
   }
   
   .flip-card-inner {
@@ -88,4 +93,39 @@
     transform: rotateY(180deg);
     bottom: 0px;
   }
+
+  /*player cards*/
   
+  .player-cards-top {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: flex;
+  }
+
+  .player-cards-right-top {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    display: flex;
+  }
+
+  .player-cards-right-bottom {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-150%);
+    display: flex;
+  }
+
+  .card.top-card, .card.right-top-card, .card.right-bottom-card {
+    width: 100px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+
+  .player-label{
+    color: white;
+  }
+

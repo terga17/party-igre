@@ -3,12 +3,14 @@ import { LoginFormComponent } from './Components/login-form/login-form.component
 import { HubPageComponent } from './Pages/hub-page/hub-page.component';
 import { BuserComponent } from './Components/buser/buser.component';
 import { PyramidComponent } from './Pages/drive-the-bus/pyramid/pyramid.component';
+import { BusComponent } from './Pages/drive-the-bus/bus/bus.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'hub', component: HubPageComponent },
   { path: 'buser', component: BuserComponent },
   { path: 'pyramid', component: PyramidComponent },
+  { path: 'bus', component: BusComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

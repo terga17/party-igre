@@ -13,9 +13,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './pyramid.component.html',
   styleUrl: './pyramid.component.css'
 })
-
 export class PyramidComponent {
-  private cards: readonly string[] = [
+  private cardsList: string[] = [
     '2_of_clubs.svg', '2_of_diamonds.svg', '2_of_hearts.svg', '2_of_spades.svg',
     '3_of_clubs.svg', '3_of_diamonds.svg', '3_of_hearts.svg', '3_of_spades.svg',
     '4_of_clubs.svg', '4_of_diamonds.svg', '4_of_hearts.svg', '4_of_spades.svg',
@@ -30,29 +29,73 @@ export class PyramidComponent {
     'king_of_clubs2.svg', 'king_of_diamonds2.svg', 'king_of_hearts2.svg', 'king_of_spades2.svg',
     'queen_of_clubs2.svg', 'queen_of_diamonds2.svg', 'queen_of_hearts2.svg', 'queen_of_spades2.svg',
   ];
+
   cardBack: string = 'assets/Images/card-back-side.svg';
-  pyramid: string[][] = [];
-  revealedCards: boolean[][] = [];
-  currentCardIndex: number = 0;
-  flippedStates: boolean[] = []; // Privzeto stanje (karta je zaprta)
+  flippedStates: boolean[] = [];
+  cards: { path: string; value: string }[] = []; // Struktura kart z vrednostjo in potjo
+  playerCards: { path: string; value: string }[][] = [];
+  lastRevealedCard: string | null = null; // Beleži zadnjo obrnjeno karto na piramidi
 
   constructor(private router: Router, library: FaIconLibrary, private dialog: MatDialog) {
     library.addIconPacks(fas);
     this.initializeFlippedStates();
+    this.assignCardValues();
+    this.assignPlayerCardValues();
   }
-  
+
   initializeFlippedStates() {
-    // Inicializiraj stanja vseh kart na "neobrnjeno" (false)
-    this.flippedStates = this.cards.map(() => false);
+    this.flippedStates = Array(15).fill(false);
+  }
+
+  assignCardValues() {
+    this.cards = Array.from({ length: 15 }, () => {
+      const randomIndex = Math.floor(Math.random() * this.cardsList.length);
+      const cardPath = this.cardsList[randomIndex];
+      const cardValue = cardPath.split('_')[0]; // Iz imena kart vzame vrednost pred "_"
+      return {
+        path: `assets/Images/playing-cards/${cardPath}`, // Pot do slike karte
+        value: cardValue, // Vrednost karte (2, 3, ace, ...)
+      };
+    });
+
+    console.log('Generirane karte:', this.cards);
+  }
+
+  assignPlayerCardValues() {
+    this.playerCards = Array.from({ length: 4 }, () => {
+      return Array.from({ length: 5 }, () => {
+        const randomIndex = Math.floor(Math.random() * this.cardsList.length);
+        const cardPath = this.cardsList[randomIndex];
+        const cardValue = cardPath.split('_')[0]; // Iz imena kart vzame vrednost pred "_"
+        return {
+          path: `assets/Images/playing-cards/${cardPath}`, // Pot do slike karte
+          value: cardValue, // Vrednost karte (2, 3, ace, ...)
+        };
+      });
+    });
+
+    console.log('Generirane igralčeve karte:', this.playerCards);
   }
 
   toggleCard(index: number) {
-    // Obrni stanje samo za določeno karto
-    this.flippedStates[index] = !this.flippedStates[index];
+    if (!this.flippedStates[index]) {
+      this.flippedStates[index] = true;
+      this.lastRevealedCard = this.cards[index].value; // Nastavi zadnjo obrnjeno karto
+      console.log(`Karta na indeksu ${index} ima vrednost: ${this.cards[index].value}`);
+    }
   }
 
-  getRandomCard(): string {
-    const randomIndex = Math.floor(Math.random() * this.cards.length);
-    return `assets/Images/playing-cards/${this.cards[randomIndex]}`;
+  checkPlayerCard(setIndex: number, cardIndex: number) {  
+    const selectedCard = this.playerCards[setIndex][cardIndex];
+    if (this.lastRevealedCard && selectedCard.value === this.lastRevealedCard) {
+      console.log(`Karta ustreza: ${selectedCard.value}`);
+      this.playerCards[setIndex][cardIndex].path = this.cardBack; 
+    } else {
+      console.log('Karta ne ustreza.');
+    }
+  }
+
+  NavigateToBus() {
+    this.router.navigate(['/bus']);
   }
 }
