@@ -10,8 +10,16 @@
     </div>
     <div class="nav-right">
       <ul>
-        <fa-icon [icon]="['fas', 'cog']" size="2x"></fa-icon>
-        <fa-icon [icon]="['fas', 'user-circle']" size="2x"></fa-icon>
+        <fa-icon
+          [icon]="['fas', 'cog']"
+          size="2x"
+          (click)="navigateToSettings()"
+        ></fa-icon>
+        <fa-icon
+          [icon]="['fas', 'user-circle']"
+          (click)="navigateToProfile()"
+          size="2x"
+        ></fa-icon>
       </ul>
     </div>
   </div>
@@ -62,10 +70,10 @@
           <h1>Never have i ever</h1>
           <p>Kratek opis</p>
         </div>
-        <button>Igraj</button>
+        <button (click)="NavigateToNHIE()">Igraj</button>
       </div>
       <div class="how-btn">
-        <button>Navodila</button>
+        <button (click)="OpenHelpNHIE()">Navodila</button>
       </div>
       <div class="stats">
         <h3>Igre odigrane: <br />12</h3>

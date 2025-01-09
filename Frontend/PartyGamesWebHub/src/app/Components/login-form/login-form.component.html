@@ -52,6 +52,7 @@
         type="submit"
         class="btn btn-primary"
         [disabled]="loginForm.invalid"
+        (click)="loginUser()"
       >
         Login
       </button>
@@ -59,10 +60,11 @@
         type="submit"
         class="btn btn-primary"
         [disabled]="loginForm.invalid"
+        (click)="registerUser()"
       >
         Sign up
       </button>
-      <button class="btn btn-primary btn-guest" (click)="navigateToHub()">
+      <button class="btn btn-primary btn-guest" (click)="continueAsGuest()">
         Continue as guest
       </button>
     </div>
