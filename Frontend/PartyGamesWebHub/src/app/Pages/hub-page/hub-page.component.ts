@@ -6,6 +6,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { HelpModalComponent } from '../../Components/help-modal/help-modal.component';
+import { HelpModalNhieComponent } from '../../Components/help-modal-nhie/help-modal-nhie.component';
 
 @Component({
   selector: 'app-hub-page',
@@ -29,8 +30,17 @@ export class HubPageComponent {
       width: '850px',
     });
   }
+
+  OpenHelpNHIE() {
+    this.dialog.open(HelpModalNhieComponent, {
+      width: '850px',
+    });
+  }
   NavigateToBus() {
     this.router.navigate(['/buser']);
+  }
+  NavigateToNHIE() {
+    this.router.navigate(['/neverhaveiever']);
   }
   navigateToSettings() {
     this.router.navigate(['/settings']);

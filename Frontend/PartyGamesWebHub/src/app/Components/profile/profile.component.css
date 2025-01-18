@@ -1,19 +1,35 @@
 .container {
   height: 100vh;
   width: 100vw;
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(182, 79, 118);
 }
 
+.welcome {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
 h2 {
   text-align: center;
   padding-top: 4rem;
+  color: white;
+}
+
+#username {
+  color: #ccccff;
+}
+
+h3 {
+  text-transform: uppercase;
+  color: white;
 }
 
 .statistics {
-  padding-top: 2rem;
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .statistic-item {
@@ -30,11 +46,31 @@ h2 {
   padding-bottom: 1rem;
 }
 
-button {
-  width: 5rem;
-  height: 1.5rem;
-}
-
 button:hover {
   cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 4rem;
+}
+
+.btns button {
+  color: white;
+  width: 7rem;
+  height: 2rem;
+  text-transform: uppercase;
+  background-color: rgb(34, 165, 34);
+}
+
+.btns button:hover {
+  border: 1px solid white;
+  background-color: rgb(32, 133, 32);
+}
+
+#logout {
+  background-color: rgb(128, 128, 128);
 }

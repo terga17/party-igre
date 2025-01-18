@@ -1,0 +1,163 @@
+.container {
+  background-image: url(/assets/Images/bg_resized_nh.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 23rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+.q-n-lives {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid gray;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  /* opacity: 0; */
+  /* animation: textFlow 1s ease-out forwards; */
+}
+
+.lives {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #eeeeee;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  gap: 5rem;
+  padding-top: 2rem;
+}
+
+.buttons button {
+  background-color: #457e49;
+  color: white;
+  border: 2px solid white;
+  padding: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.buttons button:hover {
+  background-color: #457e49;
+}
+
+.restart button {
+  background-color: #a52f2d;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.restart button:hover {
+  background-color: #d82f2c;
+}
+
+#backBtn {
+  background-color: #b4b4b4;
+  color: black;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 6rem;
+  align-self: flex-start;
+  margin-left: 7rem;
+}
+
+#backBtn:hover {
+  background-color: #222222;
+  color: white;
+  border: 1px solid white;
+}
+
+#have:hover {
+  background-color: #a52f2d;
+}
+
+#havent:hover {
+  background-color: #49ac4c;
+}
+
+.lives-p {
+  font-size: 1.2rem;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.lives-bar {
+  display: flex;
+  gap: 0.3rem;
+}
+
+@keyframes textFlow {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes redFlash {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.game-over-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 1;
+  animation: fadeOut 1.5s forwards;
+}
+
+.game-over-image img {
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
