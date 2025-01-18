@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="game-container">
+    <div class="q-n-lives">
+      <div class="lives-bar">
+        <div class="lives">Preostala življenja:</div>
+
+        <div class="lives-p">{{ lives }}</div>
+      </div>
+      <p class="question">{{ currentQuestion }}</p>
+      <div class="restart" *ngIf="lives === 0">
+        <button (click)="restartGame()">Restart</button>
+      </div>
+    </div>
+    <div *ngIf="showGameOverImage" class="game-over-image">
+      <img src="/assets/Images/hurt_flash.png" alt="Game Over" />
+    </div>
+    <div class="buttons">
+      <button id="have" (click)="playerDidIt()">I Have</button>
+      <button id="havent" (click)="playerDidNotDoIt()">I Have Not</button>
+    </div>
+    <button id="backBtn" (click)="goBack()">NAZAJ</button>
+  </div>
+</div>

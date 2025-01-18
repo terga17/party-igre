@@ -20,13 +20,21 @@ export class ProfileComponent {
     private router: Router
   ) {
     this.userName = this.userService.getUserName();
-    this.fetchUserStatistics();
+    if (!this.userName) { // if nobody logged in 
+      this.router.navigate(['/']);
+    }
+    if (this.userName != 'guest') { // user logged in
+      this.fetchUserStatistics();
+      this.displayFriends();
+    }
+    console.log("User:",this.userService.getUserName());
+    this.loading = false;
   }
 
   statistics: any = {};
   loading: boolean = true;
   error: string | null = null;
-
+  friends: any = {};
   // ngOnInit(): void {
   // }
 
@@ -46,5 +54,35 @@ export class ProfileComponent {
 
   returnToHub() {
     this.router.navigate(['/hub']);
+  }
+
+  logout() {
+    localStorage.removeItem("user");
+    this.userService.setUserName('');
+    this.userService.setUserId('');
+    this.router.navigate(["/"]);
+  }
+
+  displayFriends() {
+    // userId je ID prijavljenega uporabnika
+    const userId = this.userService.getUserId();
+    this.apiService.fetchFriends(userId).subscribe(
+      (response) => {
+        this.apiService.getUsers().subscribe(allUsers => {
+          const friends = response.user.friends;
+          const friendUsernames: string[] = [];;
+
+          friends.forEach((friend: any) => {
+            // Find the username of each friend by matching friend.id with the users' id
+            const matchedUser = allUsers.users.find((user:any) => user.id == friend.id);
+            if (matchedUser) {
+              friendUsernames.push(matchedUser.username); // Add the username to the array
+            }
+          });
+          this.statistics.friendList = friendUsernames;
+          this.statistics.friendCount = friendUsernames.length;
+        })
+      }
+    );
   }
 }

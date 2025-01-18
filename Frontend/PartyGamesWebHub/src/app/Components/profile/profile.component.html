@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>Profila uporabnika: {{ userName }}</h2>
+  <div class="welcome">
+    <h2>Profila uporabnika:</h2>
+    <h2 id="username">{{ userName }}</h2>
+  </div>
 
   <div *ngIf="loading" class="loading">
     <p>Nalaganje...</p>
@@ -10,7 +13,7 @@
   </div>
 
   <div *ngIf="!loading && !error" class="statistics">
-    <h3>Statistike</h3>
+    <h3>Statistike:</h3>
 
     <div class="statistic-item first-item">
       <strong>Število prijateljev:</strong>
@@ -27,10 +30,20 @@
       <p>{{ statistics.avgRating || 0 }}</p>
     </div>
 
+    <div class="statistic-item">
+      <strong>Seznam prijateljev:</strong>
+      <p>{{ statistics.friendList }}</p>
+    </div>
+
     <div class="statistic-item last-item">
       <strong>Račun ustvarjen dne:</strong>
       <p>{{ statistics.accountCreated || "N/A" }}</p>
     </div>
-    <button class="btn btn-secondary" (click)="returnToHub()">Return</button>
+    <div class="btns">
+      <button class="btn btn-secondary" (click)="returnToHub()">Return</button>
+      <button class="btn btn-secondary" id="logout" (click)="logout()">
+        Log Out
+      </button>
+    </div>
   </div>
 </div>
