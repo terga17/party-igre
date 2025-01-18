@@ -49,12 +49,10 @@
       <div class="whose-turn">{{ gameActive ? "YOUR TURN" : gameResult }}</div>
       <img class="info-icon" src="images/information.png" />
 
-      <!-- Time remaining section, only visible while the game is active -->
       <div *ngIf="gameActive" class="time-remaining">
         Time remaining: {{ remainingTime }} seconds
       </div>
 
-      <!-- Reset button, only visible when the game is over -->
       <div *ngIf="!gameActive" class="reset-button">
         <button (click)="restartGame()">Start Game Again</button>
       </div>

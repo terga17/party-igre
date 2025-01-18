@@ -10,7 +10,7 @@ export class TicTacToeComponent implements OnInit {
   currentPlayer: string = 'X';
   gameActive: boolean = true;
   gameResult: string = '';
-  remainingTime: number = 60; // Example timer duration
+  remainingTime: number = 10;
   timerInterval: any;
   winningConditions: number[][] = [
     [0, 1, 2],
@@ -25,7 +25,6 @@ export class TicTacToeComponent implements OnInit {
 
   ngOnInit(): void {
     this.startTimer();
-    this.gameActive = true;
   }
 
   handleCellClick(cellIndex: number): void {
@@ -38,18 +37,19 @@ export class TicTacToeComponent implements OnInit {
     if (this.checkWin()) {
       this.gameActive = false;
       this.gameResult = `${this.currentPlayer} Wins!`;
-      clearInterval(this.timerInterval); // Stop the timer
+      clearInterval(this.timerInterval);
       return;
     }
 
     if (this.cells.every((cell) => cell !== '')) {
       this.gameActive = false;
       this.gameResult = 'Draw!';
-      clearInterval(this.timerInterval); // Stop the timer
+      clearInterval(this.timerInterval);
       return;
     }
 
     this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+    this.resetTimer();
   }
 
   checkWin(): boolean {
@@ -67,9 +67,16 @@ export class TicTacToeComponent implements OnInit {
       } else if (this.remainingTime === 0) {
         clearInterval(this.timerInterval);
         this.gameActive = false;
-        this.gameResult = "Time's up! Draw!";
+        this.gameResult = `Time's up! ${
+          this.currentPlayer === 'X' ? 'O' : 'X'
+        } Wins! `;
       }
     }, 1000);
+  }
+  resetTimer(): void {
+    clearInterval(this.timerInterval);
+    this.remainingTime = 10;
+    this.startTimer();
   }
 
   restartGame(): void {
@@ -77,7 +84,7 @@ export class TicTacToeComponent implements OnInit {
     this.currentPlayer = 'X';
     this.gameActive = true;
     this.gameResult = '';
-    this.remainingTime = 60; // Reset the timer
-    this.startTimer(); // Restart the timer
+    this.remainingTime = 10;
+    this.startTimer();
   }
 }
