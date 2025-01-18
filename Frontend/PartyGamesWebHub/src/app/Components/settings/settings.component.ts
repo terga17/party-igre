@@ -1,15 +1,32 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../Services/api.service';
+import { UserService } from '../../Services/user.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css',
 })
 export class SettingsComponent {
-  constructor(private router: Router) {}
+  userName: string = '';
+  friendList: string[] = [];
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private apiService: ApiService,
+  ) {
+    this.userName = this.userService.getUserName();
+    if (!this.userName) { // if nobody logged in 
+      this.router.navigate(['/']);
+    }
+
+    this.displayFriends();
+
+  }
 
   setting1: string = '';
   setting2: string = '';
@@ -37,4 +54,27 @@ export class SettingsComponent {
     this.setting4 = '';
     this.router.navigate(['/hub']);
   }
+
+  displayFriends() {
+    // userId je ID prijavljenega uporabnika
+    const userId = this.userService.getUserId();
+    console.log("Searching for users friends...");
+    this.apiService.fetchFriends(userId).subscribe(
+      (response) => {
+        this.apiService.getUsers().subscribe(allUsers => {
+          const friends = response.user.friends;
+          friends.forEach((friend: any) => {
+            // Find the username of each friend by matching friend.id with the users' id
+            const matchedUser = allUsers.users.find((user:any) => user.id == friend.id);
+            if (matchedUser) {
+              this.friendList.push(matchedUser.username); // Add the username to the array
+            }
+          });
+
+          console.log("User friends: ", this.friendList);
+        })
+      }
+    );
+  }
+
 }

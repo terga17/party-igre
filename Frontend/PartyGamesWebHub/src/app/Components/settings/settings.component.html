@@ -1,6 +1,15 @@
 <div class="container">
   <div class="settings-container">
-    <h2>Nastavitve</h2>
+    <h2>Uporabnik: {{ userName }}</h2>
+    
+<!-- TODO make it pretier -->
+
+    <div class="friend-list">
+      <h3>Friend list:</h3>
+      <div *ngFor="let friend of friendList">
+        {{friend}}
+      </div>
+    </div>
 
     <div class="all-settings">
       <div class="form-group">
