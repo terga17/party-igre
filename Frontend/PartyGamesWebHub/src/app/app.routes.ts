@@ -23,8 +23,16 @@ export const routes: Routes = [
     component: NeverhaveieverComponent,
     canActivate: [authGuard],
   },
-  { path: 'truth-or-dare', component: TruthOrDareComponent },
-  { path: 'tic-tac-toe', component: TicTacToeComponent },
+  {
+    path: 'truth-or-dare',
+    component: TruthOrDareComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'tic-tac-toe',
+    component: TicTacToeComponent,
+    canActivate: [authGuard],
+  },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
