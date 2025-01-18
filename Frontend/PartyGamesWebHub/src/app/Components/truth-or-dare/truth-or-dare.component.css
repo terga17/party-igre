@@ -1,0 +1,433 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url("../../../assets/Images/TruthOrDare/truth_or_dare_backround.png");*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+
+.dark-backround {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+  */
+.choose-field {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 697px;
+  height: 382px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+}
+.truth-or-dare {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Holtwood One SC", serif;
+  font-size: 43px;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 447px;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+.choose-type-of-game {
+  color: #000000;
+  text-align: center;
+  font-family: "Holtwood One SC", serif;
+  font-size: 30px;
+  font-weight: 900;
+  width: 100%;
+  height: auto;
+}
+.truth-dare-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between Truth and Dare fields */
+  width: 100%; /* Ensure it spans full width */
+  height: 80%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 40vh;
+  gap: 20px;
+}
+
+.normal,
+.couples,
+.party,
+.extreme {
+  width: 258px;
+  height: 90px;
+  position: static;
+  margin: 10px 0;
+}
+
+.field-normal {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+  top: 30px;
+}
+.field-couples {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+  top: 30px;
+}
+.field-party {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+}
+.field-extreme {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+}
+
+.normal-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.couples-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.party-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.extreme-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emoji-normal {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-couples {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+}
+.emoji-party {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+}
+.emoji-extreme {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+}
+
+.info-icon {
+  width: 35px;
+  height: 36px;
+  position: absolute;
+  left: 640px;
+  bottom: 324px;
+  object-fit: cover;
+}
+.truth,
+.dare {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.field-truth,
+.field-dare {
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-truth {
+  background: #2daeff;
+}
+
+.field-dare {
+  background: #ff2f27;
+}
+
+.truth-text,
+.dare-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.emoji-truth,
+.emoji-dare {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-display {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.question-field {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.5s ease;
+  width: 697px;
+  height: 382px;
+}
+
+.question-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.question-field.truth {
+  background: #2daeff;
+}
+
+.question-field.dare {
+  background: #ff2f27;
+}
+
+.back-field {
+  background: #2daeff;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 40%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px; /* Position at the bottom */
+}
+
+.back-field:hover {
+  background-color: #1a8cd8;
+}
+
+.back-text {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+/*
+@media (max-width: 768px) {
+  .truth-or-dare {
+    font-size: 36px;
+    width: 90%;
+    height: auto;
+  }
+
+  .choose-type-of-game {
+    font-size: 18px;
+    width: 90%;
+    top: 40px;
+  }
+
+  .normal,
+  .couples,
+  .party,
+  .extreme {
+    width: 45%;
+    height: 80px;
+  }
+
+  .field-normal,
+  .field-couples,
+  .field-party,
+  .field-extreme {
+    width: 100%;
+    height: 100%;
+  }
+
+  .normal-text,
+  .couples-text,
+  .party-text,
+  .extreme-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .truth-or-dare {
+    font-size: 28px;
+    width: 90%;
+    height: auto;
+  }
+
+  .choose-type-of-game {
+    font-size: 16px;
+    width: 90%;
+    top: 30px;
+  }
+
+  .normal,
+  .couples,
+  .party,
+  .extreme {
+    width: 100%;
+    height: 70px;
+  }
+
+  .field-normal,
+  .field-couples,
+  .field-party,
+  .field-extreme {
+    width: 100%;
+    height: 100%;
+  }
+
+  .normal-text,
+  .couples-text,
+  .party-text,
+  .extreme-text {
+    font-size: 20px;
+  }
+}
+  */

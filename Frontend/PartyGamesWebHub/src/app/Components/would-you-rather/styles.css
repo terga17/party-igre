@@ -1,28 +1,21 @@
-.truth-or-dare-choose-type,
-.truth-or-dare-choose-type * {
-  box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/truth_or_dare_backround.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
-.truth-or-dare-choose-type {
-  height: 662px;
-  position: relative;
-}
-.truth-or-dare-backround-3 {
-  width: 1072px;
-  height: 662px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  object-fit: cover;
-}
-.rectangle-16 {
+.dark-backround {
   background: rgba(0, 0, 0, 0.4);
-  width: 1072px;
-  height: 662px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 0px;
   top: 0px;
 }
-.frame {
+.choose-field {
   background: rgba(255, 255, 255, 0.45);
   border-radius: 29px;
   border-style: solid;
@@ -31,45 +24,62 @@
   width: 697px;
   height: 382px;
   position: absolute;
-  left: 188px;
-  top: 140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .truth-or-dare {
   color: #ffffff;
   text-align: center;
-  font-family: "HoltwoodOneSc-Regular", sans-serif;
+  font-family: "Holtwood One SC", serif;
   font-size: 43px;
   font-weight: 400;
   position: absolute;
-  left: 319px;
+  left: 50%;
   top: 40px;
   width: 447px;
   height: 71px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateX(-50%);
 }
 .choose-type-of-game {
   color: #000000;
   text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
+  font-family: "Holtwood One SC", serif;
   font-size: 30px;
   font-weight: 900;
   position: absolute;
-  left: 319px;
-  top: 170px;
-  width: 434px;
+  left: 50%;
+  top: 15%;
+  width: 534px;
   height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translate(-50%, -50%);
 }
 .normal {
   width: 258px;
   height: 90px;
   position: static;
 }
-.rectangle-17 {
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+.normal,
+.couples,
+.party,
+.extreme {
+  margin: 10px 0;
+}
+.field-normal {
   background: #bceef3;
   border-radius: 29px;
   border-style: solid;
@@ -77,34 +87,66 @@
   border-width: 5px;
   width: 258px;
   height: 90px;
-  position: absolute;
-  left: 256px;
-  top: 241px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  right: 180px;
+  bottom: 235px;
 }
-.normal2 {
+.normal-text {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
   font-weight: 900;
-  position: absolute;
-  left: 327px;
-  top: 266px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.div {
+.emoji-normal {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-couples {
+  background: #ffb2b2;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  position: absolute;
+  left: 367px;
+  top: 111px;
+}
+.emoji-couples {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
   font-weight: 900;
   position: absolute;
-  left: 288px;
-  top: 269px;
-  width: 30px;
-  height: 30px;
+  left: 400px;
+  top: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.couples-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 445px;
+  top: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,50 +156,12 @@
   height: 90px;
   position: static;
 }
-.rectangle-172 {
-  background: #ffb2b2;
-  border-radius: 29px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 5px;
-  width: 258px;
-  height: 90px;
-  position: absolute;
-  left: 567px;
-  top: 241px;
-}
-.div2 {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 597px;
-  top: 269px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.couples2 {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 635px;
-  top: 266px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .party {
   width: 258px;
   height: 90px;
   position: static;
 }
-.rectangle-173 {
+.field-party {
   background: #c9fec4;
   border-radius: 29px;
   border-style: solid;
@@ -166,31 +170,31 @@
   width: 258px;
   height: 90px;
   position: absolute;
-  left: 256px;
-  top: 364px;
+  left: 38px;
+  top: 254px;
 }
-.div3 {
+.emoji-party {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
   font-weight: 900;
   position: absolute;
-  left: 296px;
-  top: 390px;
+  left: 90px;
+  top: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.party2 {
+.party-text {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
   font-weight: 900;
   position: absolute;
-  left: 337px;
-  top: 387px;
+  left: 137px;
+  top: 277px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,7 +204,7 @@
   height: 90px;
   position: static;
 }
-.rectangle-174 {
+.field-extreme {
   background: #d5cdd6;
   border-radius: 29px;
   border-style: solid;
@@ -209,40 +213,126 @@
   width: 258px;
   height: 90px;
   position: absolute;
-  left: 567px;
-  top: 364px;
+  left: 366px;
+  top: 254px;
 }
-.div4 {
+.emoji-extreme {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
   font-weight: 900;
   position: absolute;
-  left: 594px;
-  top: 390px;
+  left: 394px;
+  top: 278px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.extreme2 {
+.extreme-text {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
   font-weight: 900;
   position: absolute;
-  left: 631px;
-  top: 387px;
+  left: 431px;
+  top: 277px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.information-2 {
+.info-icon {
   width: 35px;
   height: 36px;
   position: absolute;
-  left: 825px;
-  top: 160px;
+  left: 640px;
+  bottom: 324px;
   object-fit: cover;
+}
+.truth,
+.dare {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.field-truth,
+.field-dare {
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.field-truth {
+  background: #2daeff;
+}
+
+.field-dare {
+  background: #ff2f27;
+}
+
+.truth-text,
+.dare-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.emoji-truth,
+.emoji-dare {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.question-field {
+  background: #ffffff;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 40%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.5s ease;
+}
+
+.question-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.question-field.truth {
+  background: #2daeff;
+}
+
+.question-field.dare {
+  background: #ff2f27;
 }
