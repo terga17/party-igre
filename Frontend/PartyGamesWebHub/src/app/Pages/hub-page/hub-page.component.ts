@@ -41,4 +41,7 @@ export class HubPageComponent {
   NavigateToTruthOrDare() {
     this.router.navigate(['/truth-or-dare']);
   }
+  NavigateToTicTacToe() {
+    this.router.navigate(['/tic-tac-toe']);
+  }
 }

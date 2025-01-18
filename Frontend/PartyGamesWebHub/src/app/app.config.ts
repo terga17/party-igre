@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TruthOrDareComponent } from './Components/truth-or-dare/truth-or-dare.component';
+import { TicTacToeComponent } from './Components/tic-tac-toe/tic-tac-toe.component'; // adjust the path as needed
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,8 +19,8 @@ export const appConfig: ApplicationConfig = {
 };
 
 @NgModule({
-  declarations: [TruthOrDareComponent],
+  declarations: [TruthOrDareComponent, TicTacToeComponent],
   imports: [CommonModule],
-  exports: [TruthOrDareComponent],
+  exports: [TruthOrDareComponent, TicTacToeComponent],
 })
 export class TruthOrDareModule {}
