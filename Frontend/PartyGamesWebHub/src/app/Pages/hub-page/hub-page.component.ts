@@ -38,4 +38,7 @@ export class HubPageComponent {
   navigateToProfile() {
     this.router.navigate(['/profile']);
   }
+  NavigateToTruthOrDare() {
+    this.router.navigate(['/truth-or-dare']);
+  }
 }

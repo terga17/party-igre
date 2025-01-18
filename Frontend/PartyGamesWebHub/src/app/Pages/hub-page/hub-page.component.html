@@ -87,5 +87,37 @@
         </div>
       </div>
     </div>
+
+    <div class="game-container">
+      <div class="img-container">
+        <img
+          src="/assets/Images/truthOrDare.png"
+          alt="bus"
+          height="220px"
+          width="175px"
+        />
+      </div>
+      <div class="desc-n-play">
+        <div class="opis">
+          <h1>Truth or Dare</h1>
+          <p>Kratek opis</p>
+        </div>
+        <button (click)="NavigateToTruthOrDare()">Igraj</button>
+      </div>
+      <div class="how-btn">
+        <button (click)="OpenHelp()">Navodila</button>
+      </div>
+      <div class="stats">
+        <h3>Igre odigrane: <br />12</h3>
+        <div class="rating">
+          <p>Oceni igro:</p>
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+          <fa-icon [icon]="['fas', 'star']"></fa-icon>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

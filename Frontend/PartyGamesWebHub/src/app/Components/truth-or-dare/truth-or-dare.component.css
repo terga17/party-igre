@@ -1,12 +1,18 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("images/truth_or_dare_backround.png");
+  /* background-image: url("../../../assets/Images/TruthOrDare/truth_or_dare_backround.png");*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* 
+
 .dark-backround {
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
@@ -15,6 +21,7 @@ body {
   left: 0px;
   top: 0px;
 }
+  */
 .choose-field {
   background: rgba(255, 255, 255, 0.45);
   border-radius: 29px;
@@ -27,6 +34,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
 }
 .truth-or-dare {
   color: #ffffff;
@@ -50,35 +59,37 @@ body {
   font-family: "Holtwood One SC", serif;
   font-size: 30px;
   font-weight: 900;
-  position: absolute;
-  left: 50%;
-  top: 15%;
-  width: 534px;
-  height: 38px;
+  width: 100%;
+  height: auto;
+}
+.truth-dare-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  transform: translate(-50%, -50%);
+  gap: 20px; /* Space between Truth and Dare fields */
+  width: 100%; /* Ensure it spans full width */
+  height: 80%;
 }
-.normal {
-  width: 258px;
-  height: 90px;
-  position: static;
-}
+
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   height: 40vh;
+  gap: 20px;
 }
 
 .normal,
 .couples,
 .party,
 .extreme {
+  width: 258px;
+  height: 90px;
+  position: static;
   margin: 10px 0;
 }
+
 .field-normal {
   background: #bceef3;
   border-radius: 29px;
@@ -93,10 +104,94 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  right: 180px;
-  bottom: 235px;
+  bottom: 50px;
+  left: 3px;
+  top: 30px;
 }
+.field-couples {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+  top: 30px;
+}
+.field-party {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+}
+.field-extreme {
+  background: #bceef3;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 50px;
+  left: 3px;
+}
+
 .normal-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.couples-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.party-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.extreme-text {
   color: #000000;
   text-align: center;
   font-family: "Hanuman-Black", sans-serif;
@@ -113,130 +208,28 @@ body {
   justify-content: center;
 }
 
-.field-couples {
-  background: #ffb2b2;
-  border-radius: 29px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 5px;
-  width: 258px;
-  height: 90px;
-  position: absolute;
-  left: 367px;
-  top: 111px;
-}
 .emoji-couples {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 400px;
-  top: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.couples-text {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 445px;
-  top: 140px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-.party {
-  width: 258px;
-  height: 90px;
-  position: static;
-}
-.field-party {
-  background: #c9fec4;
-  border-radius: 29px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 5px;
-  width: 258px;
-  height: 90px;
-  position: absolute;
-  left: 38px;
-  top: 254px;
 }
 .emoji-party {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 90px;
-  top: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.party-text {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 137px;
-  top: 277px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-.extreme {
-  width: 258px;
-  height: 90px;
-  position: static;
-}
-.field-extreme {
-  background: #d5cdd6;
-  border-radius: 29px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 5px;
-  width: 258px;
-  height: 90px;
-  position: absolute;
-  left: 366px;
-  top: 254px;
 }
 .emoji-extreme {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
   font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 394px;
-  top: 278px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.extreme-text {
-  color: #000000;
-  text-align: center;
-  font-family: "Hanuman-Black", sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  position: absolute;
-  left: 431px;
-  top: 277px;
-  display: flex;
-  align-items: center;
   justify-content: center;
 }
+
 .info-icon {
   width: 35px;
   height: 36px;
@@ -266,7 +259,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .field-truth {
@@ -296,24 +288,27 @@ body {
 
 .question-display {
   display: flex;
+  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
 .question-field {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 29px;
   border-style: solid;
   border-color: #000000;
   border-width: 5px;
-  width: 40%;
-  height: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transition: background-color 0.5s ease;
+  width: 697px;
+  height: 382px;
 }
 
 .question-text {
@@ -331,3 +326,108 @@ body {
 .question-field.dare {
   background: #ff2f27;
 }
+
+.back-field {
+  background: #2daeff;
+  border-radius: 29px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 5px;
+  width: 40%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px; /* Position at the bottom */
+}
+
+.back-field:hover {
+  background-color: #1a8cd8;
+}
+
+.back-text {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Hanuman-Black", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+/*
+@media (max-width: 768px) {
+  .truth-or-dare {
+    font-size: 36px;
+    width: 90%;
+    height: auto;
+  }
+
+  .choose-type-of-game {
+    font-size: 18px;
+    width: 90%;
+    top: 40px;
+  }
+
+  .normal,
+  .couples,
+  .party,
+  .extreme {
+    width: 45%;
+    height: 80px;
+  }
+
+  .field-normal,
+  .field-couples,
+  .field-party,
+  .field-extreme {
+    width: 100%;
+    height: 100%;
+  }
+
+  .normal-text,
+  .couples-text,
+  .party-text,
+  .extreme-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .truth-or-dare {
+    font-size: 28px;
+    width: 90%;
+    height: auto;
+  }
+
+  .choose-type-of-game {
+    font-size: 16px;
+    width: 90%;
+    top: 30px;
+  }
+
+  .normal,
+  .couples,
+  .party,
+  .extreme {
+    width: 100%;
+    height: 70px;
+  }
+
+  .field-normal,
+  .field-couples,
+  .field-party,
+  .field-extreme {
+    width: 100%;
+    height: 100%;
+  }
+
+  .normal-text,
+  .couples-text,
+  .party-text,
+  .extreme-text {
+    font-size: 20px;
+  }
+}
+  */

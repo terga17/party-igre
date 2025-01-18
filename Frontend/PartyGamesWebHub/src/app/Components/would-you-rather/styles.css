@@ -151,6 +151,11 @@ body {
   align-items: center;
   justify-content: center;
 }
+.couples {
+  width: 258px;
+  height: 90px;
+  position: static;
+}
 .party {
   width: 258px;
   height: 90px;
