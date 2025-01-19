@@ -6,9 +6,20 @@
 
     <div class="friend-list">
       <h3>Friend list:</h3>
-      <div *ngFor="let friend of friendList">
-        {{friend}}
+      <div *ngFor="let user of friendList" class="friend-row">
+          <button class="friend-button">👤{{ user.username }}</button>
+          <button>Remove</button>
       </div>
+    </div>
+
+    <div class="friend-search">
+      <h3>Add friends:</h3>
+      <input type="text"
+       placeholder="Enter username"
+        id="searchUsername"
+        [(ngModel)]="requestUsername"
+        >
+      <button class="addFriend" (click)="sendFriendRequest()">Send request</button>
     </div>
 
     <div class="all-settings">
@@ -57,8 +68,8 @@
       </div>
 
       <div class="btn-container">
-        <button class="btn btn-primary" (click)="saveSettings()">Save</button>
-        <button class="btn btn-secondary" (click)="cancelSettings()">
+        <button class="btn btn-primary actionButton" (click)="saveSettings()">Save</button>
+        <button class="btn btn-secondary actionButton" (click)="cancelSettings()">
           Cancel
         </button>
       </div>

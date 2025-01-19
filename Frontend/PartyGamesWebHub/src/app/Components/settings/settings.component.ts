@@ -4,6 +4,7 @@ import { UserService } from '../../Services/user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-settings',
   standalone: true,
@@ -13,13 +14,16 @@ import { Router } from '@angular/router';
 })
 export class SettingsComponent {
   userName: string = '';
-  friendList: string[] = [];
+  userId: string = '';
+  friendList: any[] = [];
+  allUsers: any[] = [];
   constructor(
     private userService: UserService,
     private router: Router,
     private apiService: ApiService,
   ) {
     this.userName = this.userService.getUserName();
+    this.userId = this.userService.getUserId();
     if (!this.userName) { // if nobody logged in 
       this.router.navigate(['/']);
     }
@@ -62,12 +66,14 @@ export class SettingsComponent {
     this.apiService.fetchFriends(userId).subscribe(
       (response) => {
         this.apiService.getUsers().subscribe(allUsers => {
+          this.allUsers = allUsers.users;
           const friends = response.user.friends;
+          console.log(response.user.friends)
           friends.forEach((friend: any) => {
             // Find the username of each friend by matching friend.id with the users' id
             const matchedUser = allUsers.users.find((user:any) => user.id == friend.id);
             if (matchedUser) {
-              this.friendList.push(matchedUser.username); // Add the username to the array
+              this.friendList.push(matchedUser); // Add the username to the array
             }
           });
 
@@ -76,5 +82,16 @@ export class SettingsComponent {
       }
     );
   }
+
+  requestUsername: string = '';
+
+  sendFriendRequest() {
+    if (this.requestUsername != '') {
+      alert(`${this.userName}, id: ${this.userId}\n sent friend request to: ${this.requestUsername}`);
+    }
+    console.log(this.allUsers)
+    
+  }
+
 
 }
