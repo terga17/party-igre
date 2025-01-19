@@ -1,6 +1,38 @@
 <div class="container">
   <div class="settings-container">
-    <h2>Nastavitve</h2>
+    <h2>Uporabnik: {{ userName }}</h2>
+    
+<!-- TODO make it pretier -->
+
+    <div class="friend-list">
+      <h3>Friend list:</h3>
+      <div *ngFor="let user of friendList" class="friend-row">
+          <button class="friend-button">👤{{ user.username }}</button>
+          <button (click)="removeFriend(user.username)">Remove</button>
+      </div>
+    </div>
+
+    <div class="friend-search">
+      <h3>Add friends:</h3>
+      <input type="text"
+       placeholder="Enter username"
+        id="searchUsername"
+        [(ngModel)]="requestUsername"
+        >
+      <button class="addFriend" (click)="sendFriendRequest()">Send request</button>
+    </div>
+
+    <div class="friend-requests">
+      <h3>Pending requests:</h3>
+      <div *ngFor="let request of friendRequests" class="pending-requests friend-row">
+        <button class="friend-button">👤{{ request.user.username }}</button>
+        <span>
+          <button (click)="acceptRequest(request.request_id)">Accept</button>
+          <button (click)="rejectRequest(request.request_id)">Reject</button>
+        </span>
+
+      </div>
+    </div>
 
     <div class="all-settings">
       <div class="form-group">
@@ -48,8 +80,8 @@
       </div>
 
       <div class="btn-container">
-        <button class="btn btn-primary" (click)="saveSettings()">Save</button>
-        <button class="btn btn-secondary" (click)="cancelSettings()">
+        <button class="btn btn-primary actionButton" (click)="saveSettings()">Save</button>
+        <button class="btn btn-secondary actionButton" (click)="cancelSettings()">
           Cancel
         </button>
       </div>

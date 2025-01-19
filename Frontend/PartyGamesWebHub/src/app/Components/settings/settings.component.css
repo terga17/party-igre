@@ -28,7 +28,7 @@ h2 {
   gap: 0.5rem;
 }
 
-button {
+button.actionButton {
   width: 5rem;
   height: 1.5rem;
 }
@@ -36,3 +36,26 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+.friend-list, .friend-search, .friend-requests{
+  text-align: center;
+  margin: 1rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  margin: 1rem;
+}
+
+.friend-row {
+  display: flex;
+  width: 80%;
+  text-align: start;
+  height: 3rem;
+  margin: 0.5rem;
+  background-color: aliceblue;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
