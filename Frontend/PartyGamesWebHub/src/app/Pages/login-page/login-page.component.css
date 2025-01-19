@@ -1,8 +1,13 @@
 .container {
   display: flex;
   justify-content: center;
-  background-image: url(../../../assets/images/bg-party.png);
-  background-size: cover;
+  background: rgb(16, 15, 12);
+  background: radial-gradient(
+    circle,
+    rgba(16, 15, 12, 1) 0%,
+    rgba(211, 161, 33, 1) 65%,
+    rgba(208, 183, 116, 1) 100%
+  );
   width: 100vw;
   height: 100vh;
   flex-direction: column;

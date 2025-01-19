@@ -1,7 +1,7 @@
-.container {
-  height: 100vh;
-  width: 100vw;
-  background-color: rgb(182, 79, 118);
+.hub-container {
+  height: 100%;
+  background-color: #1f1f1f;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -10,6 +10,11 @@
   align-items: center;
   padding: 0.5rem;
   border-bottom: 2px solid black;
+}
+
+:host {
+  height: 100%;
+  width: 100%;
 }
 
 .nav-right {
@@ -21,10 +26,16 @@
   display: flex;
   gap: 2.5rem;
 }
-
+fa-icon {
+  color: rgb(255, 255, 255);
+}
 fa-icon:hover {
-  color: white;
+  color: #f4a261;
   cursor: pointer;
+}
+
+.game-container fa-icon:hover {
+  color: #000000;
 }
 
 .game-section {
@@ -33,6 +44,8 @@ fa-icon:hover {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background-color: #f4a261;
+  padding-bottom: 4rem;
 }
 
 .game-container {
@@ -40,9 +53,11 @@ fa-icon:hover {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 60rem;
+  width: 70rem;
   height: 18rem;
   border: 3px solid black;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .img-container {
@@ -57,7 +72,13 @@ fa-icon:hover {
 .desc-n-play {
   display: flex;
   flex-direction: column;
-  gap: 7rem;
+  width: 30rem;
+}
+
+.opis {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
 }
 
 .how-btn {
@@ -70,11 +91,13 @@ fa-icon:hover {
   text-transform: uppercase;
   width: 7rem;
   height: 2rem;
-  background-color: rgb(34, 165, 34);
+  background-color: #2b2b2b;
+  border: 2px solid white;
 }
 
 .desc-n-play button:hover {
   cursor: pointer;
+  background-color: #206329;
   border: 2px solid white;
 }
 
