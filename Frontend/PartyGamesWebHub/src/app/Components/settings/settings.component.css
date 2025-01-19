@@ -37,7 +37,7 @@ button:hover {
   cursor: pointer;
 }
 
-.friend-list, .friend-search {
+.friend-list, .friend-search, .friend-requests{
   text-align: center;
   margin: 1rem;
   margin-bottom: 3rem;

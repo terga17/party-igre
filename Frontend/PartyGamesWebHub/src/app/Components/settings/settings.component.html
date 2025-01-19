@@ -8,7 +8,7 @@
       <h3>Friend list:</h3>
       <div *ngFor="let user of friendList" class="friend-row">
           <button class="friend-button">👤{{ user.username }}</button>
-          <button>Remove</button>
+          <button (click)="removeFriend(user.username)">Remove</button>
       </div>
     </div>
 
@@ -20,6 +20,18 @@
         [(ngModel)]="requestUsername"
         >
       <button class="addFriend" (click)="sendFriendRequest()">Send request</button>
+    </div>
+
+    <div class="friend-requests">
+      <h3>Pending requests:</h3>
+      <div *ngFor="let request of friendRequests" class="pending-requests friend-row">
+        <button class="friend-button">👤{{ request.user.username }}</button>
+        <span>
+          <button (click)="acceptRequest(request.request_id)">Accept</button>
+          <button >Reject</button>
+        </span>
+
+      </div>
     </div>
 
     <div class="all-settings">
