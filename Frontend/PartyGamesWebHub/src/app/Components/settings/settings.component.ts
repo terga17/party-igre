@@ -30,7 +30,6 @@ export class SettingsComponent {
     }
 
     this.displayFriends();
-    this.displayFriendRequests();
   }
 
   setting1: string = '';
@@ -80,6 +79,8 @@ export class SettingsComponent {
           });
 
           console.log("User friends: ", this.friendList);
+
+          this.displayFriendRequests();
         })
       }
     );
@@ -108,25 +109,31 @@ export class SettingsComponent {
   displayFriendRequests() {
     this.apiService.fetchPendingRequests(this.userId).subscribe(response => {
       const friendRequests = response.pending_requests;
+      this.friendRequests = [];
       console.log("Requests: ", friendRequests);
-      this.apiService.getUsers().subscribe((allUsers) => {
-        this.allUsers = allUsers.users;
-        console.log("Allusers req: ", allUsers.users);
+      if (friendRequests) {
         friendRequests.forEach((fRequest: any) => {
-          const matchedUser = allUsers.users.find((user: any) => user.id == fRequest.sender_id);
+          const matchedUser = this.allUsers.find((user: any) => user.id == fRequest.sender_id);
           if (matchedUser) {
             console.log("Wants to be your friend: ", matchedUser); // Add the username to the array
-            this.friendRequests.push({"user": matchedUser, "request_id": fRequest.id});
+            this.friendRequests.push({ "user": matchedUser, "request_id": fRequest.id });
           }
         })
-
-      })
+      }
     })
   }
 
   acceptRequest(requestId: string) {
     alert(`Accepted friend request!`);
     this.apiService.acceptFriendRequest(this.userId, requestId).subscribe(response => {
+      console.log(response);
+      this.displayFriends();
+    });
+  }
+
+  rejectRequest(requestId: string) {
+    alert(`Rejected friend request!`);
+    this.apiService.rejectFriendRequest(this.userId, requestId).subscribe(response => {
       console.log(response);
       this.displayFriends();
     });
