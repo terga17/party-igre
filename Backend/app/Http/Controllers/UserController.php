@@ -103,16 +103,22 @@ class UserController extends Controller
 
     public function removeUserFriend(string $userId, string $friendId)
     {
-        if ($userId === $friendId) {
-            return response()->json([
-                'message' => 'You cannot remove yourself as a friend.',
-            ], 400);  // Return 400 Bad Request
-        }
 
+        
         try {
-            // Attempt to find the user and friend by their IDs
             $user = User::findOrFail($userId);
-            $friend = User::findOrFail($friendId);
+            //first check for username
+            $friend = User::where('username', $friendId)->first();
+            if (!$friend){
+                $friend = User::findOrFail($friendId);
+            }
+
+            if ($user == $friend) {
+                return response()->json([
+                    'message' => 'You cannot remove yourself as a friend.',
+                ], 400);  // Return 400 Bad Request
+            }
+
 
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             // Handle the case where the user or friend is not found

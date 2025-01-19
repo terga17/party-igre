@@ -29,7 +29,11 @@ class FriendRequestController extends Controller
     {
         // Find both users
         $sender = User::findOrFail($senderId);
-        $receiver = User::findOrFail($receiverId);
+        $receiver = User::where('username', $receiverId)->first();
+        if (!$receiver){
+            $receiver = User::findOrFail($receiverId);
+        }
+
         if ($sender->isFriend($receiver)){
             return response()->json(['message' => 'You are already friends.'], 400);
         };
@@ -39,23 +43,22 @@ class FriendRequestController extends Controller
         }
 
         // Check if a friend request exists between sender and receiver
-        $friendRequest = FriendRequest::where('sender_id', $receiverId)
+        $friendRequest = FriendRequest::where('sender_id', $receiver->id)
             ->where('receiver_id', $senderId)
             ->first();  // Retrieve the first matching request (use firstOrFail() if you want an exception if not found)
-
         if ($friendRequest) {
             // If a request exists, call acceptRequest with the request's id
             return $this->acceptRequest($senderId, $friendRequest->id); // Pass the request id here
         }
 
         // Check if a request already exists
-        if (FriendRequest::where('sender_id', $senderId)->where('receiver_id', $receiverId)->exists()) {
+        if (FriendRequest::where('sender_id', $senderId)->where('receiver_id', $receiver->id)->exists()) {
             return response()->json(['message' => 'Friend request already sent.'], 400);
         }
 
         FriendRequest::create([
             'sender_id' => $senderId,
-            'receiver_id' => $receiverId,
+            'receiver_id' => $receiver->id,
         ]);
 
         return response()->json(['message' => 'Friend request sent successfully.'], 201);
