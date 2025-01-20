@@ -53,6 +53,23 @@ export class ApiService {
   removeFriend(userId: string, friendId: string): Observable<any> { // removes two friends
     return this.http.get(`${this.apiUrl}/user/${userId}/remove-friend/${friendId}`);
   }
+
+  getGames(): Observable<any> { // returns a list of games : response.games
+    return this.http.get(`${this.apiUrl}/games`)
+  }  
+
+  playGame(gameId: string, userId: string): Observable<any> { // updates games played count
+    return this.http.get(`${this.apiUrl}/games/${gameId}/user/${userId}/increment`)
+  }  
+
+  gamesPlayed(gameId: string, userId: string): Observable<any> { // returns playcount of a game : response.games_played
+    return this.http.get(`${this.apiUrl}/games/${gameId}/user/${userId}/play-count`)
+  }  
+
+  rateGame(gameId: string, userId: string, rating: string): Observable<any> { // changes the rating for a game of a user - doesn't work, if play count is NULL for that user
+    return this.http.get(`${this.apiUrl}/games/${gameId}/user/${userId}/rate/${rating}`)
+  }  
+
   
   getUserStatistics(): Observable<any> {
     const mockStatistics = {
