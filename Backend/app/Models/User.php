@@ -137,6 +137,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Game::class, 'game_user')
                     ->withPivot('rounds_played')
+                    ->withPivot('rating')
                     ->withTimestamps();
     }
 

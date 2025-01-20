@@ -45,5 +45,9 @@ Route::get('/truth', [GamesController::class, 'getTruth']);
 Route::get('/dare', [GamesController::class, 'getDare']);
 Route::get('/question', [GamesController::class, 'getQuestion']);
 
-Route::get('/wip',[GamesController::class, 'wip']);
+Route::get('/games',[GamesController::class, 'index']);
+Route::get('/games/{gameId}/user/{userId}/increment',[GamesController::class, 'incrementGamesPlayed']);
+Route::get('/games/{gameId}/user/{userId}/play-count',[GamesController::class, 'getGamesPlayedCount']);
+Route::get('/games/{gameId}/user/{userId}/rate/{rating}',[GamesController::class, 'rateGame']);
+
 // Route::resource('user', UserController::class);

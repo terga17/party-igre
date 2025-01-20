@@ -22,6 +22,7 @@ class Game extends Model
     {
         return $this->belongsToMany(User::class, 'game_user')
             ->withPivot('rounds_played')
+            ->withPivot('rating')
             ->withTimestamps();
     }
 
