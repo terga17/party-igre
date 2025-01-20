@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 use App\Models\GameQuestion; //
 
 class GamesController extends Controller
-{   
-    public function index(){
-        
+{
+    public function index()
+    {
+
         $games = Game::all();
         foreach ($games as $game) {
             $this->getVotersAndTotalScore($game->id);
@@ -18,7 +19,7 @@ class GamesController extends Controller
         // Return the list of users as a JSON response
         return response()->json([
             'games' => $games
-        ]);    
+        ]);
     }
 
     public function getAllQuestions()
@@ -180,24 +181,25 @@ class GamesController extends Controller
     }
 
     public function getVotersAndTotalScore($gameId)
-{
-    $game = Game::findOrFail($gameId);
+    {
+        $game = Game::findOrFail($gameId);
 
-    $totalScore = 0;
-    $votersCount = 0;
+        $totalScore = 0;
+        $votersCount = 0;
 
-    foreach ($game->players as $player) {
-        if ($player->pivot->rating) {
-            $totalScore += $player->pivot->rating;
-            $votersCount++;
+        foreach ($game->players as $player) {
+            if ($player->pivot->rating) {
+                $totalScore += $player->pivot->rating;
+                $votersCount++;
+            }
         }
+        $game->total_ratings = $totalScore;
+        $game->total_voters = $votersCount;
+        $game->save();
     }
-    $game->total_ratings = $totalScore;
-    $game->total_voters = $votersCount;
-    $game->save(); 
-}
 
-    public function rateGame($gameId, $userId, int $rating) {
+    public function rateGame($gameId, $userId, int $rating)
+    {
         $playedGame = Game::findOrFail($gameId);
         $user = User::findOrFail($userId);
 
@@ -211,11 +213,25 @@ class GamesController extends Controller
             return response()->json(['message' => 'Invalid rating.'], 404);
         }
         $pivotEntry->pivot->rating = $rating;
-        $pivotEntry->pivot->save();   
+        $pivotEntry->pivot->save();
         $this->getVotersAndTotalScore($gameId);
         return response()->json(['message' => 'Rating updated.']);
+
+
+    }
+
+    public function getUserRating($gameId,$userId)
+    {
+        $playedGame = Game::findOrFail($gameId);
         
+        $pivotEntry = $playedGame->players()->where('user_id', $userId)->first();
         
+        if (!$pivotEntry) {
+            return response()->json(['message' => 'User is not associated with this game.'], 404);
+        }
+        return response()->json([
+            'current_rating' => $pivotEntry->pivot->rating
+        ]);
     }
 
 }

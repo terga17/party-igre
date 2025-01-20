@@ -54,7 +54,7 @@ export class ApiService {
     return this.http.get(`${this.apiUrl}/user/${userId}/remove-friend/${friendId}`);
   }
 
-  getGames(): Observable<any> { // returns a list of games : response.games
+  getGames(): Observable<any> { // returns a list of games + ratings : response.games
     return this.http.get(`${this.apiUrl}/games`)
   }  
 
@@ -68,7 +68,11 @@ export class ApiService {
 
   rateGame(gameId: string, userId: string, rating: string): Observable<any> { // changes the rating for a game of a user - doesn't work, if play count is NULL for that user
     return this.http.get(`${this.apiUrl}/games/${gameId}/user/${userId}/rate/${rating}`)
-  }  
+  }
+  
+  getGameUserRating(gameId: string, userId: string): Observable<any> { // gets current users rating for a certain game
+    return this.http.get(`${this.apiUrl}/games/${gameId}/user/${userId}/rating`)
+  }
 
   
   getUserStatistics(): Observable<any> {
