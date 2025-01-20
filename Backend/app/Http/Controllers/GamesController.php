@@ -10,8 +10,11 @@ use App\Models\GameQuestion; //
 class GamesController extends Controller
 {   
     public function index(){
+        
         $games = Game::all();
-
+        foreach ($games as $game) {
+            $this->getVotersAndTotalScore($game->id);
+        }
         // Return the list of users as a JSON response
         return response()->json([
             'games' => $games
