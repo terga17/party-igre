@@ -45,5 +45,5 @@ Route::get('/truth', [GamesController::class, 'getTruth']);
 Route::get('/dare', [GamesController::class, 'getDare']);
 Route::get('/question', [GamesController::class, 'getQuestion']);
 
-
+Route::get('/wip',[GamesController::class, 'wip']);
 // Route::resource('user', UserController::class);

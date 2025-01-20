@@ -133,4 +133,11 @@ class User extends Authenticatable
         return $this->hasMany(FriendRequest::class, 'receiver_id');
     }
 
+    public function games()
+    {
+        return $this->belongsToMany(Game::class, 'game_user')
+                    ->withPivot('rounds_played')
+                    ->withTimestamps();
+    }
+
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\GameQuestion; //
 
@@ -117,5 +119,16 @@ class GamesController extends Controller
             ], 404);
         }
     }
+
+    public function wip(){
+        $game = Game::find(1);
+        $user = User::find(1);
+
+        $game->players()->attach($user->id, ['rounds_played' => 5]);
+        return response()->json([
+            'message' => 'HellO!'
+        ]);
+    }   
+
 
 }
